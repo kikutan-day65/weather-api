@@ -21,6 +21,11 @@ def get_current_weather(latitude, longitude, api=API_KEY):
     return response
 
 
+def covert_to_celsius(kelvin):
+    celsius = kelvin - 273.15
+
+    return celsius
+
 
 def main():
     city = 'Tokyo'
