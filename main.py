@@ -13,19 +13,19 @@ def get_latitude_and_longitude(city, api_key=API_KEY):
 
     return LAT, LON
 
-# # main url
-# url = f'https://api.openweathermap.org/data/2.5/weather?lat={LAT}&lon={LON}&appid={API_KEY}'
 
-# response = requests.get(url).json()
-# print(response)
+def get_current_weather(latitude, longitude, api=API_KEY):
+    url = f'https://api.openweathermap.org/data/2.5/weather?lat={latitude}&lon={longitude}&appid={API_KEY}'
+    response = requests.get(url).json()
+    
+    return response
 
 
 
 def main():
     city = 'Tokyo'
     latitude, longitude = get_latitude_and_longitude(city)
-    print(latitude)
-    print(longitude)
+    get_current_weather(latitude, longitude)
 
 
 if __name__=='__main__':
