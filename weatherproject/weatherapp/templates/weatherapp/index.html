@@ -9,21 +9,28 @@
     <link rel="stylesheet" href="{% static 'styles.css' %}" type="text/css">
 </head>
 <body>
-    <h1>Welcome to our Weather page!</h1>
-
-    <form method="POST">
-        {% csrf_token %}
-        <input type="text" placeholder="Enter city", name="city">
-        <button type="submit">Enter</button>
-    </form>
-
-    <h2>
-        {{ city }} <br>
-        {{ temp }} <br>
-        {{ description }} <br>
-        {{ day }} <br>
-    </h2>
-    <img src="http://openweathermap.org/img/w/{{ icon }}.png" width="100px">
-
+    <div class="container">
+        <form action="">
+          <input type="text" name="city" placeholder="Enter City">
+          <button type="submit" class="btn">Enter</button>
+        </form>
+        <div class="weather">
+          <div class="left">
+            <h2>{{ temp }} &deg;</h2>
+            <h3>{{ city }}</h3>
+          </div>
+          <div class="right">
+            <div class="icon">
+              <p>
+                <img src="http://openweathermap.org/img/w/{{ icon }}.png" width="100px">
+              </p>
+            </div>
+            <div class="condition">
+              <p>{{ description }}</p>
+              <p>{{ day }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
 </body>
 </html>
