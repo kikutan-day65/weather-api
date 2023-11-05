@@ -10,7 +10,8 @@
 </head>
 <body>
     <div class="container">
-        <form action="">
+        <form method="POST">
+          {% csrf_token %}
           <input type="text" name="city" placeholder="Enter City">
           <button type="submit" class="btn">Enter</button>
         </form>
