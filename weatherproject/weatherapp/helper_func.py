@@ -31,10 +31,3 @@ def enter_city(city_name='Tokyo'):
     city = city_name
 
     return city
-    # latitude, longitude = get_latitude_and_longitude(city)
-    # current = get_current_weather(latitude, longitude)
-
-    # temperature = convert_to_celsius(current['main']['temp'])
-
-    # print(city)
-    # print(f'{temperature} Celsius')
