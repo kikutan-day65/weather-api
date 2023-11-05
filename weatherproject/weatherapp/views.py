@@ -7,7 +7,7 @@ import datetime
 def index(request):
 
     if 'city' in request.POST:
-        city = request.POST['city']
+        city = request.POST['city'].title()
     else:
         city = 'Tokyo'
         
