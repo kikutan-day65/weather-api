@@ -25,9 +25,3 @@ def convert_to_celsius(kelvin):
     celsius = kelvin - 273.15
 
     return round(celsius, 1)
-
-
-def enter_city(city_name='Tokyo'):
-    city = city_name
-
-    return city

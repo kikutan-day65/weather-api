@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,12 +10,19 @@
 <body>
     <h1>Welcome to our Weather page!</h1>
 
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" placeholder="Enter city", name="city">
+        <button type="submit">Enter</button>
+    </form>
+
     <h2>
         {{ city }} <br>
         {{ temp }} <br>
-        {{ icon }} <br>
         {{ description }} <br>
         {{ day }} <br>
     </h2>
+    <img src="http://openweathermap.org/img/w/{{ icon }}.png" width="100px">
+
 </body>
 </html>

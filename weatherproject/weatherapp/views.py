@@ -5,7 +5,12 @@ import datetime
 
 # Create your views here.
 def index(request):
-    city = enter_city() # Specify the city from html later
+
+    if 'city' in request.POST:
+        city = request.POST['city']
+    else:
+        city = 'Tokyo'
+        
     lat, lon = get_latitude_and_longitude(city)
     current = get_current_weather(lat, lon)
     temperature = convert_to_celsius(current['main']['temp'])
