@@ -27,12 +27,14 @@ def convert_to_celsius(kelvin):
     return round(celsius, 1)
 
 
-def enter_city():
-    city = 'Tokyo'
-    latitude, longitude = get_latitude_and_longitude(city)
-    current = get_current_weather(latitude, longitude)
+def enter_city(city_name='Tokyo'):
+    city = city_name
 
-    temperature = convert_to_celsius(current['main']['temp'])
+    return city
+    # latitude, longitude = get_latitude_and_longitude(city)
+    # current = get_current_weather(latitude, longitude)
 
-    print(city)
-    print(f'{temperature} Celsius')
+    # temperature = convert_to_celsius(current['main']['temp'])
+
+    # print(city)
+    # print(f'{temperature} Celsius')
